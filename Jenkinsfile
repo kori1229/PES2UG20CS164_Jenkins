@@ -6,6 +6,10 @@ pipeline {
     }
     stages {
       stage('Build') {
+        def mvn_version = 'maven'
+        withEnv( ["PATH+MAVEN=${tool mvn_version}/bin"] ) {
+  //sh "mvn clean package"
+        }
         steps {
           bat 'mvn clean install'
           echo 'Build Stage Successful'
