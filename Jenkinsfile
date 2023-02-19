@@ -3,7 +3,7 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh 'maven clean install'
+          sh 'mvn clean install'
           echo 'Build Stage Successful'
         }
       }
@@ -20,7 +20,7 @@ pipeline {
       }
       stage('Deploy') {
         steps {
-          sh 'maven deploy'
+          sh 'mvn deploy'
           echo 'Development Successful'
         }
       }
